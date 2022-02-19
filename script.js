@@ -24,8 +24,12 @@ for (let button of buttons) {
             myInput = '/';
             preview.innerText += '/';
         } else if (myInput == '=') {
-            var evalConvert = eval(preview.innerText);
+            const evalConvert = eval(preview.innerText);
+            if (typeof(evalConvert) != 'number') {
+                alert('Please Enter something to calculate')
+            } else {
             result.innerText = evalConvert;
+        }
         } else {
             preview.innerText += myInput;
         }
