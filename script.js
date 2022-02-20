@@ -15,8 +15,8 @@ for (let button of buttons) {
             preview.innerText = previousNumber.substring(0, previousNumber.length - 1);
             result.innerText = '';
         } else if (myInput == '%') {
-            alert('This is under construction!!! \n' +
-            'Please try divide option to get percentage');
+            result.innerText = Number(preview.innerText) / 100;
+            preview.innerText = Number(result.innerText);
         } else if (myInput == '×') {
             myInput = '*';
             preview.innerText += '*';
@@ -26,7 +26,7 @@ for (let button of buttons) {
         } else if (myInput == '=') {
             const evalConvert = eval(preview.innerText);
             if (typeof(evalConvert) != 'number') {
-                alert('Please Enter something to calculate')
+                alert('Something is happening wrong !!!')
             } else {
             result.innerText = evalConvert;
         }
